@@ -206,7 +206,7 @@ const Sidebar = () => {
               }`}
             >
               <Link
-                to="products"
+                to="/products"
                 className="mb-8 flex gap-3"
                 onClick={() => handleSidebarClick("Products")}
               >
@@ -228,7 +228,7 @@ const Sidebar = () => {
               }`}
             >
               <Link
-                to="customers"
+                to="/customers"
                 className="mb-8 flex gap-3"
                 onClick={() => handleSidebarClick("Customers")}
               >
@@ -251,7 +251,7 @@ const Sidebar = () => {
               }`}
             >
               <Link
-                to="add-admin"
+                to="/add-admin"
                 className="mb-8 flex gap-3"
                 onClick={() => handleSidebarClick("Add Admin")}
               >
