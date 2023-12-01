@@ -34,19 +34,13 @@ export const ResultSearchProduct = ({ resultSearch }) => {
       .then((result) => {
         if (result.isConfirmed) {
           dispatch(deleteProduct(id));
-
-          swalWithBootstrapButtons.fire(
-            "Deleted!",
-            "Your file has been deleted.",
-            "success"
-          );
         } else if (
           /* Read more about handling dismissals below */
           result.dismiss === Swal.DismissReason.cancel
         ) {
           swalWithBootstrapButtons.fire(
             "Cancelled",
-            "Your imaginary file is safe :)",
+            "Your file is safe :)",
             "error"
           );
         }

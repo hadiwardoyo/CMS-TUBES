@@ -105,7 +105,7 @@ function SearchBar({ index, setResultSearch }) {
           <input
             type="search"
             id="default-search"
-            className="block w-full p-2.5 pl-11 text-sm focus:outline-none text-green-700 border border-green-700 rounded-full placeholder-orange-400"
+            className="block w-full h-[4vh] p-2.5 pl-11 text-sm focus:outline-none text-green-700 border border-green-700 rounded-full placeholder-orange-400"
             placeholder="Search"
             value={input}
             onChange={(e) => hendleChange(e.target.value)}

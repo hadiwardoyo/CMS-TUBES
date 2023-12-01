@@ -30,12 +30,6 @@ export const ResultSearchList = ({ resultSearch }) => {
       .then((result) => {
         if (result.isConfirmed) {
           dispatch(deleteCustomer(id));
-
-          swalWithBootstrapButtons.fire(
-            "Deleted!",
-            "Your file has been deleted.",
-            "success"
-          );
         } else if (
           /* Read more about handling dismissals below */
           result.dismiss === Swal.DismissReason.cancel

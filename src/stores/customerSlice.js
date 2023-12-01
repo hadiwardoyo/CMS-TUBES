@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { URL } from "../helpers/MasterAPI";
+import Swal from "sweetalert2";
 
 const initialState = {
   customers: [],
@@ -45,7 +46,7 @@ export const getSearchData = (data) => {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
-        url: `http://localhost:3000/api/user/search-data`,
+        url: `${URL}/api/user/search-data`,
       });
 
       dispatch(setSearchData(response.data));
@@ -96,6 +97,12 @@ export const deleteCustomer = (id) => {
         },
         url: `${URL}/api/user/delete/${id}`,
         timeout: 10000,
+      });
+      Swal.fire({
+        icon: "success",
+        title: "Success to Delete User",
+        showConfirmButton: false,
+        timer: 1500,
       });
       dispatch(setDelCustomerRes(response));
       dispatch(setLoading(false));
