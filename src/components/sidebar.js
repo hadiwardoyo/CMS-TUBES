@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setLogout } from "../stores/authSlice";
 import ContentRoutes from "../routes/ContentRoutes";
 import Swal from "sweetalert2";
+import Footer from "./Footer";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
@@ -137,7 +138,7 @@ const Sidebar = () => {
         </div>
       </div>
       {/* Sidebar */}
-      <div className="mx-14 mt-14">
+      <div className="mr-14 mt-14">
         <div className="grid grid-rows-6 grid-flow-col gap-4">
           <div className="row-span-3 font-normal text-sm pl-20 w-60 text-white">
             <div
@@ -301,6 +302,9 @@ const Sidebar = () => {
           <div className="col-span-12 w-full -mt-2 row-span-6 rounded-2xl h-full">
             <ContentRoutes />
           </div>
+        </div>
+        <div className="row-span-1">
+          <Footer />
         </div>
       </div>
     </div>

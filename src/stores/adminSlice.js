@@ -88,6 +88,7 @@ export const deleteAdmin = (id) => {
 };
 
 export const addAdmin = (data) => {
+  console.log(data);
   return async (dispatch) => {
     dispatch(setLoading(true));
     try {

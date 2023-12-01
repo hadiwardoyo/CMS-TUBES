@@ -111,12 +111,12 @@ export const ResultSearchOrder = ({ resultSearch }) => {
           >
             <th
               scope="row"
-              className="px-6 py-1 text-base font-bold whitespace-nowrap text-orange-500 capitalize"
+              className="px-6 py-4 text-sm font-bold whitespace-nowrap text-orange-500 capitalize"
             >
               {User.name}
             </th>
-            <td className="px-6 py-3 ">{Payment.Receipt}</td>
-            <td className="px-6 py-3">
+            <td className="px-6 py-4 ">{Payment.Receipt}</td>
+            <td className="px-6 py-4">
               {Fruits.map((fruit, index) => {
                 const { name } = fruit;
                 const isLast = index === Fruits.length - 1;
@@ -127,7 +127,7 @@ export const ResultSearchOrder = ({ resultSearch }) => {
                 );
               })}
             </td>
-            <td className="px-6 py-3">
+            <td className="px-6 py-4">
               {Fruits.map((fruit, index) => {
                 const { BucketJunc, price } = fruit;
                 let totalPrice = +BucketJunc.totalItem * price;
@@ -140,19 +140,19 @@ export const ResultSearchOrder = ({ resultSearch }) => {
                 );
               })}
             </td>
-            <td className="px-6 py-3 text-orange-500">
+            <td className="px-6 py-4 text-orange-500">
               {convertRupiah.convertToRupiah(total)}
             </td>
-            <td className="px-6 py-3">
+            <td className="px-6 py-4">
               <label for="underline_select" className="sr-only">
                 Underline select
               </label>
               <div className="flex items-center">
                 {status === "Packaging" ? (
-                  <div className="flex justify-between text-left items-center py-2 pr-4 h-9 w-fit border-2 rounded-full border-slate-400">
+                  <div className="flex justify-between text-left items-center pr-4 h-7 w-fit border-2 rounded-full border-slate-400">
                     <select
                       id="underline_select"
-                      className="py-2 pl-4 pr-2 w-auto text-xs text-left font-bold text-slate-400 bg-transparent appearance-none focus:outline-none inline-flex"
+                      className="py-0 pl-4 pr-2 w-auto text-[10px] text-left font-bold text-slate-400 bg-transparent appearance-none focus:outline-none inline-flex"
                       value={selectedStatusMap[id] || "Packaging"}
                       onChange={(e) => handleStatusChange(e, id)}
                     >
@@ -179,10 +179,10 @@ export const ResultSearchOrder = ({ resultSearch }) => {
                     </svg>
                   </div>
                 ) : status === "Delivery" ? (
-                  <div className="flex justify-between text-left items-center py-2 pr-4 h-9 w-fit border-2 rounded-full border-blue-600">
+                  <div className="flex justify-between text-left items-center pr-4 h-7 w-fit border-2 rounded-full border-blue-600">
                     <select
                       id="underline_select"
-                      className="py-2 pl-4 pr-2 w-auto text-xs text-left font-bold text-blue-600 bg-transparent appearance-none focus:outline-none inline-flex peer"
+                      className=" pl-4 pr-2 w-auto text-[10px] text-left font-bold text-blue-600 bg-transparent appearance-none focus:outline-none inline-flex peer"
                       value={selectedStatusMap[id] || "Delivery"}
                       onChange={(e) => handleStatusChange(e, id)}
                     >
@@ -208,10 +208,10 @@ export const ResultSearchOrder = ({ resultSearch }) => {
                     </svg>
                   </div>
                 ) : status === "Delivered" ? (
-                  <div className="flex justify-between text-left items-center py-2 pr-4 h-9 w-fit border-2 rounded-full border-green-700">
+                  <div className="flex justify-between text-left items-center pr-4 h-7 w-fit border-2 rounded-full border-green-700">
                     <select
                       id="underline_select"
-                      className="py-2 pl-4 pr-2 w-auto text-xs text-left font-bold text-green-700 bg-transparent appearance-none focus:outline-none inline-flex peer"
+                      className="pl-4 pr-2 w-auto text-[10px] text-left font-bold text-green-700 bg-transparent appearance-none focus:outline-none inline-flex peer"
                       value={selectedStatusMap[id] || "Delivered"}
                       onChange={(e) => handleStatusChange(e, id)}
                     >

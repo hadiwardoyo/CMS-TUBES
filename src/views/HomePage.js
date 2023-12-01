@@ -16,7 +16,7 @@ const HomePage = () => {
   return (
     <>
       <Sidebar />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

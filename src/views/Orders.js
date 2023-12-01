@@ -60,8 +60,8 @@ const Orders = () => {
   };
 
   return (
-    <div className="bg-white rounded-2xl h-[700px] px-3 py-3">
-      <div className="relative font-['Nunito'] space-y-4">
+    <div className="bg-white rounded-2xl h-[72vh] w-auto px-3 py-3">
+      <div className="relative h-[92%] font-['Nunito'] space-y-4">
         <div className="object-center p-2 flow-root">
           <div className="flex items-center justify-between">
             <h1 className="text-green-700 text-xl font-bold">
@@ -73,54 +73,54 @@ const Orders = () => {
         </div>
 
         {/* TABLE OF CONTENT */}
-        <div className="mb-10 static h-[534px] flow-root">
-          {loading ? (
-            <div className="absolute bg-white p-[270px] z-10 left-auto max-md:top-36 flex items-center w-full justify-center">
-              <Loading />
-            </div>
-          ) : (
-            ""
-          )}
-          <div className="relative overflow-x-auto sm:rounded-md m-4 mb-10">
-            <table className="w-full text-sm text-left -mt-4 table-auto">
-              <thead className="font-bold text-md border-b-green-700 border-b-2">
-                <tr>
-                  <th scope="col" className="px-6 py-3">
-                    Name
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Receipt
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Items
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Qty
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Total Price
-                  </th>
-                  <th scope="col" className="px-14 py-3">
-                    Status
-                  </th>
-                </tr>
-              </thead>
 
-              <tbody className="relative">
-                {orders ? (
-                  <ResultSearchOrder
-                    resultSearch={resultSearch ? resultSearch : orders}
-                  />
-                ) : (
-                  <p>{error ? error : "Data Empty"}</p>
-                )}
-              </tbody>
-            </table>
+        {loading ? (
+          <div className="absolute bg-white p-[270px] z-10 left-auto max-md:top-36 flex items-center w-full h-[72vh] justify-center">
+            <Loading />
           </div>
+        ) : (
+          ""
+        )}
+        <div className="relative sm:rounded-md mb-10">
+          <table className="w-full text-[10px] text-left table-auto">
+            <thead className="font-bold border-b-green-700 border-b-2">
+              <tr>
+                <th scope="col" className="px-6 pb-2">
+                  Name
+                </th>
+                <th scope="col" className="px-6 pb-2">
+                  Receipt
+                </th>
+                <th scope="col" className="px-6 pb-2">
+                  Items
+                </th>
+                <th scope="col" className="px-6 pb-2">
+                  Qty
+                </th>
+                <th scope="col" className="px-6 pb-2">
+                  Total Price
+                </th>
+                <th scope="col" className="px-14 pb-2">
+                  Status
+                </th>
+              </tr>
+            </thead>
+
+            <tbody className="relative text-[10px] h-[50%]">
+              {orders ? (
+                <ResultSearchOrder
+                  resultSearch={resultSearch ? resultSearch : orders}
+                />
+              ) : (
+                <p>{error ? error : "Data Empty"}</p>
+              )}
+            </tbody>
+          </table>
         </div>
+
         <div className="flex justify-center items-center" name="pagination ">
           <nav
-            className="block justify-between absolute -bottom-11  -space-x-px margin-center"
+            className="block justify-between absolute -bottom-11 -space-x-px margin-center"
             role="navigation"
             aria-label="pagination"
           >
@@ -129,25 +129,25 @@ const Orders = () => {
               nextLabel={"Next"}
               pageCount={pages}
               onPageChange={changePage}
-              containerClassName={"inline-flex -space-x-px text-sm h-8"}
+              containerClassName={"inline-flex -space-x-px text-sm h-6"}
               pageLinkClassName={
-                "flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+                "flex items-center justify-center text-[10px] px-3 h-6 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
               }
               previousLinkClassName={
-                "flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700"
+                "flex items-center justify-center text-[10px] px-3 h-6 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700"
               }
               nextLinkClassName={
-                "flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700"
+                "flex items-center justify-center text-[10px] px-3 h-6 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700"
               }
               activeLinkClassName={
-                "flex items-center justify-center px-3 h-8 text-sky-600 font-bold border border-gray-300 bg-sky-200"
+                "flex items-center justify-center text-[10px]s px-3 h-6 text-sky-600 font-bold border border-gray-300 bg-sky-200"
               }
               disabledLinkClassName={
-                "flex items-center justify-center px-3 h-8 text-blue-600 border border-0"
+                "flex items-center justify-center text-[10px] px-3 h-6 text-blue-600 border border-0"
               }
             />
             <div className="text-center">
-              <span className="text-sm font-normal text-black-900">
+              <span className="text-[10px] font-normal text-black-900">
                 Total Rows :{" "}
                 <span className="font-semibold text-gray-500 ">
                   {rows ? rows : 0}

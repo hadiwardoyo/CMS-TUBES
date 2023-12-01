@@ -564,7 +564,7 @@ const AddAdmin = () => {
                                 : "drag and drop"}
                             </p>
                           </div>
-                          <p>PNG, JPG, GIF, up to 5MB</p>
+                          <p>PNG, JPG, GIF, up to 1 MB</p>
                           <div>
                             <ul>
                               {avatar.map((file) => (

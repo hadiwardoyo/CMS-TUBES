@@ -33,7 +33,7 @@ const Products = () => {
   const [image, setImage] = useState([]);
   const [CategoryId, setCategoryId] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
-  const [Fruit, setFruit] = useState({
+  const [fruit, setFruit] = useState({
     name: "",
     price: 0,
     stock: 0,
@@ -164,8 +164,8 @@ const Products = () => {
 
   const handleAddProduct = async (e) => {
     e.preventDefault();
-    e.image = image[0];
-    dispatch(addProducts(e));
+    fruit.image = image[0];
+    dispatch(addProducts(fruit));
     setShowModalProduct(false);
   };
 
@@ -730,12 +730,12 @@ const Products = () => {
                             </div>
                             <p className="ml-2 text-left">
                               or{" "}
-                              {detailProduct
+                              {detailProduct && detailProduct.image !== null
                                 ? detailProduct.image.split("-")[1]
                                 : "drag and drop"}
                             </p>
                           </div>
-                          <p>PNG, JPG, GIF, up to 5MB</p>
+                          <p>PNG, JPG, GIF, up to 1 MB</p>
                           <div>
                             <ul>
                               {image.map((file) => (

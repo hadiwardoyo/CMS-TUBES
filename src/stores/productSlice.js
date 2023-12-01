@@ -135,6 +135,7 @@ export const addProducts = (data) => {
   return async (dispatch) => {
     dispatch(setLoading(true));
     try {
+      console.log(data);
       const response = await axios({
         method: "POST",
         data,
@@ -143,11 +144,6 @@ export const addProducts = (data) => {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
         url: `${URL}/api/fruit/create`,
-        // params: {
-        // 	search_query: "",
-        // 	page: data.page,
-        // 	limit: 10,
-        // },
       });
       Swal.fire({
         icon: "success",
@@ -183,11 +179,6 @@ export const editProducts = (id, data) => {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
         url: `${URL}/api/fruit/edit/${id}`,
-        // params: {
-        // 	search_query: "",
-        // 	page: data.page,
-        // 	limit: 10,
-        // },
       });
       Swal.fire({
         icon: "success",
@@ -221,13 +212,13 @@ export const deleteProduct = (id) => {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
         url: `${URL}/api/fruit/delete/${id}`,
-        // params: {
-        // 	search_query: "",
-        // 	page: data.page,
-        // 	limit: 10,
-        // },
       });
-
+      Swal.fire({
+        icon: "success",
+        title: "Delete Product successfully",
+        showConfirmButton: false,
+        timer: 1500,
+      });
       dispatch(setDelProductRes(response));
       dispatch(setLoading(false));
     } catch (error) {
