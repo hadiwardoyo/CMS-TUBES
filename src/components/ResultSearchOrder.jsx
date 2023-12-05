@@ -113,7 +113,7 @@ export const ResultSearchOrder = ({ resultSearch }) => {
               scope="row"
               className="px-6 py-4 text-sm font-bold whitespace-nowrap text-orange-500 capitalize"
             >
-              {User !== null ? User.name || "user"}
+              {User !== null ? User.name : "user"}
             </th>
             <td className="px-6 py-4 ">{Payment.Receipt}</td>
             <td className="px-6 py-4">
